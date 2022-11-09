@@ -28,11 +28,13 @@
 :light_theme
   :: reg command to execute and set/update the value
   reg add HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize /v AppsUseLightTheme /t REG_DWORD /d 1 /f
+  reg add HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize /v SystemUsesLightTheme /t REG_DWORD /d 1 /f
   goto :eof
   :: ignore any instruction that are specified in this function after this line and go to end of file
 
 :dark_theme
   :: reg command to execute and set/update the value
   reg add HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize /v AppsUseLightTheme /t REG_DWORD /d 0 /f
+  reg add HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize /v SystemUsesLightTheme /t REG_DWORD /d 0 /f
   goto :eof
   :: ignore any instruction that are specified in this function after this line and go to end of file
